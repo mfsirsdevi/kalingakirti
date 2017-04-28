@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body id="app-layout">
-    <nav id="app-navbar" class="navbar navbar-default navbar-static-top">
+    <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
 
