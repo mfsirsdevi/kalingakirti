@@ -23,12 +23,12 @@
                 <hr>
 
                 <!-- Date/Time -->
-                <p><span class="glyphicon glyphicon-time"></span> Posted on {{ Carbon\Carbon::parse($article->create_at)->format('d-m-Y') }}</p>
+                <p><span class="glyphicon glyphicon-time"></span> Posted on {{ Carbon\Carbon::parse($article->created_at)->format('d-m-Y') }}</p>
 
                 <hr>
 
                 <!-- Preview Image -->
-                <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+                <img class="img-responsive" src="{{ asset('img/'.$article->image) }}" alt="" height="300" width="900">
 
                 <hr>
 

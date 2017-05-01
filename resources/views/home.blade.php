@@ -57,6 +57,9 @@
                                                 </button>
                                             </form>
                                         </td>
+                                        <!-- <td>
+                                            <a class = "btn btn-warning" href="{{ url('admin/article/'.$article->id.'/edit') }}">Update</a>
+                                        </td> -->
                                         <td>
                                             <a class = "btn btn-primary" href="{{ url('admin/article/'.$article->id) }}"><i class="fa fa-btn fa-play" aria-hidden="true"></i> view</a>
                                         </td>

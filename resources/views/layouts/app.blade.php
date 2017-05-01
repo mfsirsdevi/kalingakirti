@@ -14,7 +14,6 @@
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
-    <link rel="stylesheet" href="css/main.css">
 </head>
 <body id="app-layout">
     <nav class="navbar navbar-default navbar-static-top">
@@ -30,15 +29,9 @@
                 </button>
 
                 <!-- Branding Image -->
-                @if(Auth::guest())
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                    <strong>Kalinga</strong>Kirti
-                    </a>
-                @else
-                    <a class="navbar-brand" href="{{ url('admin') }}">
-                    <strong>Kalinga</strong>Kirti
-                    </a>
-                @endif
+                <a class="navbar-brand" href="{{ url('admin') }}">
+                <strong>Kalinga</strong> Kirti
+                </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -50,16 +43,9 @@
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
+
                     @if (Auth::guest())
-                        <li>
-                            <a href="/food">Food</a>
-                        </li>
-                        <li>
-                            <a href="/places">Places</a>
-                        </li>
-                        <li>
-                            <a href="/culture">Culture</a>
-                        </li>
+
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -70,8 +56,7 @@
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             </ul>
                         </li>
-                    @endif
-                </ul>
+                    @endif                </ul>
             </div>
         </div>
     </nav>

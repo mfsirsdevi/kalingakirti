@@ -25,6 +25,8 @@ Route::get('/admin', 'HomeController@index');
 Route::get('/admin/articles', 'HomeController@showArticles');
 
 Route::get('/admin/article/{article}', 'HomeController@showArticle');
+Route::get('/admin/article/{article}/edit', 'HomeController@edit');
+Route::post('/admin/article/{article}/update', 'HomeController@update');
 
 Route::get('/create', 'HomeController@createArticle');
 

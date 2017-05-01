@@ -36,13 +36,17 @@ class HomeController extends Controller
          */
         $this->validate($request, [
             'title' => 'required',
+            'image' => 'required | mimes:jpeg,jpg,png',
             'category' => 'required',
             'summary' => 'required',
-            'content' => 'required',
+            'content' => 'required'
         ]);
 
         $article = new Article;
         $article->title = $request->title;
+        $file = $request->image;
+        $file->move(public_path().'/img', $file->getClientOriginalName());
+        $article->image = $file->getClientOriginalName();
         $article->category = $request->category;
         $article->summary = $request->summary;
         $article->content = $request->content;
@@ -59,6 +63,25 @@ class HomeController extends Controller
     public function showArticle(Article $article)
     {
         return view('show', compact('article'));
+    }
+
+    public function edit(Article $article)
+    {
+        return view('edit', compact('article'));
+    }
+
+    public function update(Request $request, $article)
+    {
+         $this->validate($request, [
+            'title' => 'required',
+            'category' => 'required',
+            'summary' => 'required',
+            'content' => 'required'
+        ]);
+
+        Article::find($article)->update(['title' => $request->title]);
+        return redirect()->route('home')
+                        ->with('success','Article updated successfully');
     }
 
     public function createArticle()

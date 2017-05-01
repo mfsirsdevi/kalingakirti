@@ -12,10 +12,10 @@
     <title>@yield('title')</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/business-casual.css" rel="stylesheet">
+    <link href="{{ asset('css/business-casual.css') }}" rel="stylesheet">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
@@ -32,7 +32,7 @@
 
 <body>
 
-    <div class="brand">KalingaKirti</div>
+    <div class="brand">Kalinga Kirti</div>
     <div class="address-bar">Bhubaneswar | Odisha, India | 9040351265</div>
 
     <!-- Navigation -->
@@ -84,10 +84,10 @@
     </footer>
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="{{ asset('js/jquery.js') }}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
     <!-- Script to Activate the Carousel -->
     <script>

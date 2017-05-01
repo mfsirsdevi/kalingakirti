@@ -3,9 +3,9 @@
 @section('content')
 
     <div class="container">
-        <h1 class="text-center">Add Your Article</h1>
+        <h1 class="text-center">Update Your Article</h1>
         <hr>
-        <form action="{{ url('/article') }}" method="POST" class="form-horizontal" enctype="multipart/form-data">
+        <form action="{{ url('admin/article/'.$article->id.'/update') }}" method="POST" class="form-horizontal" enctype="multipart/form-data">
             {{ csrf_field() }}
 
             <!-- Article Title -->
@@ -13,7 +13,7 @@
                 <label for="title" class="col-sm-2 control-label">Title</label>
 
                 <div class="col-sm-9">
-                    <input type="text" name="title" id="task-name" class="form-control">
+                    <input type="text" name="title" id="task-name" class="form-control" value="{{ $article->title }}">
                     @if ($errors->has('title'))
                         <span class="help-block">
                             <strong>{{ $errors->first('title') }}</strong>
@@ -22,24 +22,12 @@
                 </div>
             </div>
 
-            <div class="form-group">
-                <label for="image" class="col-sm-2 control-label">Image</label>
-
-                <div class="col-sm-9">
-                    <input type="file" name="image" id="task-image">
-                    @if ($errors->has('image'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('image') }}</strong>
-                        </span>
-                    @endif
-                </div>
-            </div>
             <!-- Article Category -->
             <div class="form-group">
                 <label for="category" class="col-sm-2 control-label">Category</label>
 
                 <div class="col-sm-9">
-                    <input type="text" name="category" id="task-name" class="form-control">
+                    <input type="text" name="category" id="task-name" class="form-control" value="{{ $article->category }}">
                     @if ($errors->has('category'))
                         <span class="help-block">
                             <strong>{{ $errors->first('category') }}</strong>
@@ -53,7 +41,7 @@
                 <label for="summmary" class="col-sm-2 control-label">Summary</label>
 
                 <div class="col-sm-9">
-                    <input name="summary" class="form-control">
+                    <input name="summary" class="form-control" value="{{ $article->summary }}">
                     @if ($errors->has('summary'))
                         <span class="help-block">
                             <strong>{{ $errors->first('summary') }}</strong>
@@ -67,7 +55,9 @@
                 <label for="content" class="col-sm-2 control-label">Article</label>
 
                 <div class="col-sm-9">
-                    <textarea name="content" class="form-control" rows="10"></textarea>
+                    <textarea name="content" class="form-control" rows="10">
+                        {!! $article->content !!}
+                    </textarea>
                     @if ($errors->has('content'))
                         <span class="help-block">
                             <strong>{{ $errors->first('content') }}</strong>
