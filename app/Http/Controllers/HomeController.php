@@ -36,7 +36,7 @@ class HomeController extends Controller
          */
         $this->validate($request, [
             'title' => 'required',
-            'image' => 'required | mimes:jpeg,jpg,png',
+            'image' => 'required | image',
             'category' => 'required',
             'summary' => 'required',
             'content' => 'required'
@@ -79,9 +79,13 @@ class HomeController extends Controller
             'content' => 'required'
         ]);
 
-        Article::find($article)->update(['title' => $request->title]);
-        return redirect()->route('home')
-                        ->with('success','Article updated successfully');
+        $article = Article::find($article);
+        $article->title = $request->title;
+        $article->category = $request->category;
+        $article->summary = $request->summary;
+        $article->content = $request->content;
+        $article->save();
+        return redirect('admin');
     }
 
     public function createArticle()

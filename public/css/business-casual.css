@@ -36,6 +36,12 @@ hr {
     border-color: #999999;
 }
 
+.site-image {
+    display: block;
+    max-height:350px;
+    width: auto;
+    height: auto;
+}
 .brand,
 .address-bar {
     display: none;
@@ -189,4 +195,12 @@ footer p {
         display: table;
         clear: both;
     }
+}
+
+.errors {
+    color: #FF0000;
+}
+
+.comments {
+    list-style: none;
 }

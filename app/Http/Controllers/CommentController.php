@@ -13,6 +13,12 @@ class CommentController extends Controller
 {
     public function store(Request $request, Article $article)
     {
+        $this->validate($request, [
+            'author' => 'required',
+            'email' => 'required | email',
+            'body' => 'required',
+        ]);
+
         $comment = new Comment;
         $comment->author = $request->author;
         $comment->email = $request->email;

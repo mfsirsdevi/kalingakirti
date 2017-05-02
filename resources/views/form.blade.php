@@ -79,7 +79,7 @@
             <!-- Add Task Button -->
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-6">
-                    <button type="submit" class="btn btn-default">
+                    <button type="submit" class="btn btn-primary">
                         <i class="fa fa-plus"></i> Submit
                     </button>
                 </div>
