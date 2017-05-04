@@ -34,3 +34,5 @@ Route::post('/article', 'HomeController@store');
 Route::post('article/{article}/comments', 'CommentController@store');
 
 Route::delete('/article/{article}', 'HomeController@destroy');
+
+Route::delete('/comment/{comment}', 'HomeController@destroyComment');

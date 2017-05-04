@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Comment;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 
@@ -26,7 +27,8 @@ class HomeController extends Controller
     public function index()
     {
         $articles = Article::orderBy('created_at', 'asc')->get();
-        return view('home', compact('articles'));
+        $comments = Comment::orderBy('created_at', 'asc')->get();
+        return view('home', compact('articles', 'comments'));
     }
 
     public function store(Request $request)
@@ -96,6 +98,12 @@ class HomeController extends Controller
     public function destroy(Article $article)
     {
         $article->delete();
+        return back();
+    }
+
+    public function destroyComment(Comment $comment)
+    {
+        $comment->delete();
         return back();
     }
 }
