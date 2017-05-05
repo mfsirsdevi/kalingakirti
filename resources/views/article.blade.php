@@ -22,7 +22,9 @@
                                 <br>
                                 <small>{{ Carbon\Carbon::parse($article->created_at)->toFormattedDateString() }}</small>
                             </h2>
-                            <p>Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                            <div>
+                                {!! $article->summary !!}
+                            </div>
                             <a href="/article/{{ $article->id }}" class="btn btn-default btn-lg">Read More</a>
                             <hr>
                         </div>

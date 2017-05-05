@@ -12,8 +12,8 @@ class ArticleController extends Controller
 {
     public function index()
     {
-        $articles = Article::orderBy('created_at','desc')->take(3)->get();
-        return view('welcome', compact('articles'));
+        $article = DB::select('select * from articles where category = ?', ['Home']);
+        return view('welcome', compact('article'));
     }
 
     public function showFood()

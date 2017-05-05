@@ -38,7 +38,7 @@ class HomeController extends Controller
          */
         $this->validate($request, [
             'title' => 'required',
-            'image' => 'required | image',
+            'image' => 'required',
             'category' => 'required',
             'summary' => 'required',
             'content' => 'required'
